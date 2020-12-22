@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicio.entidades.tienda.xergio.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicio.entidades.tienda.xergio.com/">
+
+<xs:element name="buscarProductoId" type="tns:buscarProductoId"/>
+
+<xs:element name="buscarProductoIdResponse" type="tns:buscarProductoIdResponse"/>
+
+<xs:element name="buscarTodosLosProducto" type="tns:buscarTodosLosProducto"/>
+
+<xs:element name="buscarTodosLosProductoResponse" type="tns:buscarTodosLosProductoResponse"/>
+
+<xs:element name="eliminarProducto" type="tns:eliminarProducto"/>
+
+<xs:element name="eliminarProductoResponse" type="tns:eliminarProductoResponse"/>
+
+<xs:element name="guardarProducto" type="tns:guardarProducto"/>
+
+<xs:element name="guardarProductoResponse" type="tns:guardarProductoResponse"/>
+
+<xs:element name="producto" type="tns:producto"/>
+
+<xs:element name="transformarJpaDto" type="tns:transformarJpaDto"/>
+
+<xs:element name="transformarJpaDtoResponse" type="tns:transformarJpaDtoResponse"/>
+
+<xs:complexType name="guardarProducto">
+<xs:sequence>
+<xs:element name="producto" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardarProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="transformarJpaDto">
+<xs:sequence>
+<xs:element name="productoEntidad" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="transformarJpaDtoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:productoDTO" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productoDTO">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarTodosLosProducto">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="buscarTodosLosProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:productoDTO" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarProductoId">
+<xs:sequence>
+<xs:element name="Id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarProductoIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:productoDTO" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarProducto">
+<xs:sequence>
+<xs:element name="producto" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
