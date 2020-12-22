@@ -8,6 +8,8 @@ package com.xergio.tienda.controlador.bean;
 import com.xergio.tienda.controlador.cliente.ClienteWSImpl;
 import com.xergio.tienda.controlador.servicios.Cliente;
 import com.xergio.tienda.controlador.servicios.ClienteDTO;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.event.ActionEvent;
 
@@ -30,9 +32,13 @@ public class ClienteWSBean {
     private ClienteDTO dto;
     private String nombres;
     private String apellidos;
+    private List<ClienteDTO> clientes = new ArrayList<>();
     
     @PostConstruct
     public void main(){
+        //System.out.println("main");
+        //clientes = ClienteWSImpl.buscarTodosLosCliente();
+        
         
     }
     
